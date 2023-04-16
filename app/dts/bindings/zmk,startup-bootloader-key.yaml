@@ -1,0 +1,14 @@
+# Copyright (c) 2023, The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+description: |
+  Enables jumping to bootloader by holding a specific key
+  when the keyboard is powered on.
+
+compatible: "zmk,startup-bootloader-key"
+
+properties:
+  key-position:
+    type: int
+    default: 0
+    description: Zero-based index of the key which triggers jumping to bootloader.

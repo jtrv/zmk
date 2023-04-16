@@ -575,6 +575,15 @@ choice CBPRINTF_IMPLEMENTATION
 
 endchoice
 
+DT_COMPAT_ZMK_STARTUP_BOOTLOADER_KEY := zmk,startup-bootloader-key
+config ZMK_STARTUP_BOOTLOADER_KEY
+	bool "Reset to bootloader at startup key"
+	default $(dt_compat_enabled,$(DT_COMPAT_ZMK_STARTUP_BOOTLOADER_KEY))
+
+config ZMK_STARTUP_BOOTLOADER_KEY_TIMEOUT_MS
+	int "Milliseconds to wait for a bootloader key at startup"
+	default 500
+
 module = ZMK
 module-str = zmk
 source "subsys/logging/Kconfig.template.log_config"
